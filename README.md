@@ -11,4 +11,5 @@ US1: Upon loading the website, the user should be greeted with a splash screen. 
 US2: After the splash screen has disappeared, we need to see the buttons for rock, paper, scissors. 
   -buttons need to be labeled 
   -what happens when we press a button? Buttons need to have functionality
-    --
+    --We need to determine the computer's choice.
+      ---since there are 3 choices we can say there is a 1/3 chance of each choice. We can use math.random() to have the computer randomly select a number and then write if statements to allocate each choice. So, we can say something like 'if the computer's random number is 1/3 or less, the computer's choice is rock. If the computer's random number is greater than 1/3 AND less than 2/3, the computer's choice is paper. If the computer's random number is greater than 2/3, the computer's choice is scissors.
