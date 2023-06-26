@@ -10,3 +10,5 @@ US1: Upon loading the website, the user should be greeted with a splash screen. 
 
 US2: After the splash screen has disappeared, we need to see the buttons for rock, paper, scissors. 
   -buttons need to be labeled 
+  -what happens when we press a button? Buttons need to have functionality
+    --
