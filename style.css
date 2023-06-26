@@ -54,21 +54,25 @@ body {
   flex-direction: column;
 }
 
-.rock {
+button {
   margin: 20px 10px;
   height: 100px;
+  border : 5px solid rgb(37, 21, 182);
+  font-size: 40px;
+  font-weight: 200px;
+  color: blue;
+  cursor: pointer;
+}
+
+.rock {
   background: url(https://images.unsplash.com/photo-1611298998053-33df4a627303?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80) no-repeat center/cover;
 }
 
 .paper {
-  margin: 20px 10px;
-  height: 100px;
   background: url(https://images.unsplash.com/photo-1523995462485-3d171b5c8fa9?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1935&q=80) no-repeat center/cover;
 }
 
 .scissors {
-  margin: 20px 10px;
-  height: 100px;
   background: url(https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80)  no-repeat;
   background-position: 35% 42%;
 }
