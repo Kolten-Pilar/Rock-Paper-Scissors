@@ -10,22 +10,23 @@ splashScreen.addEventListener('click',()=>{
 });
 
 // initialize score
-const playerScore = {
+const score = {playerScore : {
   wins: 0,
   losses: 0,
   ties: 0,
-};
+  },
 
-const computerScore = {
+computerScore : {
   wins: 0,
   losses: 0,
   ties: 0,
+  }
 };
 
 
 
 // function for determining computer's choice
-function computerChoice () {
+const computerChoice = () => {
   const randomNumber = Math.random();
 
   let computerMove = '';
@@ -41,55 +42,87 @@ function computerChoice () {
 }
 
 // function to compare computer choice vs player's choice
-function theGame (playerMove) {
+const theGame = (playerMove) => {
   const computerMove = computerChoice();
 
   if (playerMove === 'rock') {
     if (computerMove === 'rock') {
-      playerScore.ties++
-      computerScore.ties++
+      // each score case gets incremented
+      score.playerScore.ties++
+      score.computerScore.ties++
       console.log('tie');
     } else if (computerMove === 'paper') {
-      playerScore.losses++
-      computerScore.wins++
+      score.playerScore.losses++
+      score.computerScore.wins++
       console.log('lose');
     }  else if (computerMove === 'scissors') {
-      playerScore.wins++
-      computerScore.losses++
+      score.playerScore.wins++
+      score.computerScore.losses++
       console.log('win');
     }   
 
   } else if (playerMove === 'paper') {
     if (computerMove === 'rock') {
-      playerScore.wins++
-      computerScore.losses++
+      score.playerScore.wins++
+      score.computerScore.losses++
       console.log('win');
     } else if (computerMove === 'paper') {
-      playerScore.ties++
-      computerScore.ties++
+      score.playerScore.ties++
+      score.computerScore.ties++
       console.log('tie');
     } else if (computerMove === 'scissors') {
-      playerScore.losses++
-      computerScore.wins++
+      score.playerScore.losses++
+      score.computerScore.wins++
       console.log('lose');
     }
 
   } else if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
-      playerScore.losses++
-      computerScore.wins++
+      score.playerScore.losses++
+      score.computerScore.wins++
       console.log('lose');
     } else if (computerMove === 'paper') {
-      playerScore.wins++
-      computerScore.losses++
+      score.playerScore.wins++
+      score.computerScore.losses++
       console.log('win');
     } else if (computerMove === 'scissors') {
-      playerScore.ties++
-      computerScore.ties++
+      score.playerScore.ties++
+      score.computerScore.ties++
       console.log('tie');
     }
   }
-  console.log(`Computer score is ${JSON.stringify(computerScore)}`);
-  console.log(`Player score is ${JSON.stringify(playerScore)}`);
+
+  // using the DOM to show results
+  let computerResult = document.getElementById('computer-result');
+  computerResult.innerText = (score.computerScore.wins);
+
+  let playerResult = document.getElementById('player-result');
+  playerResult.innerText = (score.playerScore.wins);
+
+  
+  
+  console.log(`Computer score is ${JSON.stringify(score.computerScore)}`);
+  console.log(`Player score is ${JSON.stringify(score.playerScore)}`);
 }
+
+// shows each round
+const button = document.getElementById('buttons');
+const round = document.getElementById('round-number');
+
+let clickCount = 0;
+button.addEventListener('click', () => {
+  clickCount++;
+  round.textContent = (`It is round ${clickCount}`);
+});
+
+
+
+// let userScore = score.playerScore.wins;
+// let opponentScore = score.computerScore.wins;
+// let playerMove = document.querySelectorAll('button');
+
+// let i = 0;
+// const play = () => {
+//   let playerMove = prompt(`you selected ${playerMove}`)
+// }
 

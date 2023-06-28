@@ -23,4 +23,5 @@ US2 CONT:
 
 US3: As a player, we want to see the results visually instead of logging into the console.
   -We need to see the Round, Score, as well as if the player or computer wins and what each player selected as their choice.
-  - we need to initialize the score near the top of the JS code
+  - we need to initialize the score as 0 near the top of the JS code
+  -we need to use the DOM to display the results of each button click into the HTML
