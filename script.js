@@ -89,6 +89,7 @@ const theGame = (playerMove) => {
       score.playerScore.ties++
       score.computerScore.ties++
       console.log('tie');
+      // i will change this to result tomorrow
     }
   }
 
@@ -99,11 +100,15 @@ const theGame = (playerMove) => {
   let playerResult = document.getElementById('player-result');
   playerResult.innerText = (score.playerScore.wins);
 
+
+  // alert box to show what each player chose
+  alert((`You chose ${playerMove}, computer chose ${computerMove}`));
   
   
   console.log(`Computer score is ${JSON.stringify(score.computerScore)}`);
   console.log(`Player score is ${JSON.stringify(score.playerScore)}`);
 }
+// ^^end of theGame
 
 // shows each round
 const button = document.getElementById('buttons');
