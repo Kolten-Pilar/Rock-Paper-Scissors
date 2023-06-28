@@ -117,7 +117,7 @@ const round = document.getElementById('round-number');
 let clickCount = 1;
 button.addEventListener('click', () => {
   clickCount++;
-  round.textContent = (`It is round ${clickCount}`);
+  round.textContent = (`Round ${clickCount}`);
 });
 
 
