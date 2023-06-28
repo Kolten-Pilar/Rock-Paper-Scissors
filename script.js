@@ -9,6 +9,18 @@ splashScreen.addEventListener('click',()=>{
   },610)
 });
 
+// initialize score
+const playerScore = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
+
+const computerScore = {
+  wins: 0,
+  losses: 0,
+  ties: 0,
+};
 
 
 
@@ -34,29 +46,50 @@ function theGame (playerMove) {
 
   if (playerMove === 'rock') {
     if (computerMove === 'rock') {
+      playerScore.ties++
+      computerScore.ties++
       console.log('tie');
     } else if (computerMove === 'paper') {
+      playerScore.losses++
+      computerScore.wins++
       console.log('lose');
     }  else if (computerMove === 'scissors') {
+      playerScore.wins++
+      computerScore.losses++
       console.log('win');
     }   
 
   } else if (playerMove === 'paper') {
     if (computerMove === 'rock') {
+      playerScore.wins++
+      computerScore.losses++
       console.log('win');
     } else if (computerMove === 'paper') {
+      playerScore.ties++
+      computerScore.ties++
       console.log('tie');
     } else if (computerMove === 'scissors') {
+      playerScore.losses++
+      computerScore.wins++
       console.log('lose');
     }
 
   } else if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
+      playerScore.losses++
+      computerScore.wins++
       console.log('lose');
     } else if (computerMove === 'paper') {
+      playerScore.wins++
+      computerScore.losses++
       console.log('win');
     } else if (computerMove === 'scissors') {
+      playerScore.ties++
+      computerScore.ties++
       console.log('tie');
     }
   }
+  console.log(`Computer score is ${JSON.stringify(computerScore)}`);
+  console.log(`Player score is ${JSON.stringify(playerScore)}`);
 }
+

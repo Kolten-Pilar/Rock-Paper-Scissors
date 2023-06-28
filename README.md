@@ -1,4 +1,5 @@
 This is my version of Rock, Paper, Scissors. It will be played against the computer. In order to win, you must be the first to accrue 3 wins. You lose if you aren't the first the 3 wins. The game will keep playing as long as no player has 3 wins. Ties do not count towards wins or losses but the ties tally will be listed. The rounds will be each turn. For example, the game will display something like, 'Round 1: you win/lose/tie.'
+Technologies Used: HTML/CSS/JavaScript/DOM
 Stretch Goals: Reset button. CSS styling. Responsive mobile design (flexbox). Working with instructors to determine additional stretch goals.
 
 6/26/23 created new repo and met with instructor to determine my project and wrote up a README.
@@ -19,3 +20,7 @@ US2 CONT:
     Now that we have a function for determining computer's choice, we need to have a way to compare the player's choice when they click a button to the computer's choice
       --we can use an if-else function again here to compare the function we created to determine the computer's move to our player's move
       -- log into console to ensure functionality
+
+US3: As a player, we want to see the results visually instead of logging into the console.
+  -We need to see the Round, Score, as well as if the player or computer wins and what each player selected as their choice.
+  - we need to initialize the score near the top of the JS code
