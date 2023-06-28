@@ -15,6 +15,6 @@ US2: After the splash screen has disappeared, we need to see the buttons for roc
       ---since there are 3 choices we can say there is a 1/3 chance of each choice. We can use math.random() to have the computer randomly select a number and then write if statements to allocate each choice. So, we can say something like 'if the computer's random number is 1/3 or less, the computer's choice is rock. If the computer's random number is greater than 1/3 AND less than 2/3, the computer's choice is paper. If the computer's random number is greater than 2/3, the computer's choice is scissors.
     
     6/28/23
-    -Now that we have a function for determining computer's choice, we need to have a way to compare the player's choice when they click a button to the computer's choice
+    Now that we have a function for determining computer's choice, we need to have a way to compare the player's choice when they click a button to the computer's choice
       --we can use an if-else function again here to compare the function we created to determine the computer's move to our player's move
       -- log into console to ensure functionality
