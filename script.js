@@ -114,7 +114,7 @@ const theGame = (playerMove) => {
 const button = document.getElementById('buttons');
 const round = document.getElementById('round-number');
 
-let clickCount = 0;
+let clickCount = 1;
 button.addEventListener('click', () => {
   clickCount++;
   round.textContent = (`It is round ${clickCount}`);
