@@ -9,16 +9,54 @@ splashScreen.addEventListener('click',()=>{
   },610)
 });
 
-const computerMove = () => {
+
+
+
+// function for determining computer's choice
+function computerChoice () {
   const randomNumber = Math.random();
 
+  let computerMove = '';
+
   if (randomNumber >= 0 && randomNumber <= 1/3) {
-    computerMove === rock;
+    computerMove = 'rock';
   } else if (randomNumber > 1/3 && randomNumber <= 2/3) {
-    computerMove === paper;
+    computerMove = 'paper';
   } else {
-    computerMove === scissors;
+    computerMove = 'scissors';
   }
+  return computerMove;
 }
 
-console.log(computerMove);
+// function to compare computer choice vs player's choice
+function theGame (playerMove) {
+  const computerMove = computerChoice();
+
+  if (playerMove === 'rock') {
+    if (computerMove === 'rock') {
+      console.log('tie');
+    } else if (computerMove === 'paper') {
+      console.log('lose');
+    }  else if (computerMove === 'scissors') {
+      console.log('win');
+    }   
+
+  } else if (playerMove === 'paper') {
+    if (computerMove === 'rock') {
+      console.log('win');
+    } else if (computerMove === 'paper') {
+      console.log('tie');
+    } else if (computerMove === 'scissors') {
+      console.log('lose');
+    }
+
+  } else if (playerMove === 'scissors') {
+    if (computerMove === 'rock') {
+      console.log('lose');
+    } else if (computerMove === 'paper') {
+      console.log('win');
+    } else if (computerMove === 'scissors') {
+      console.log('tie');
+    }
+  }
+}
