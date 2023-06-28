@@ -5,23 +5,24 @@ Stretch Goals: Reset button. CSS styling. Responsive mobile design (flexbox). Wo
 6/26/23 created new repo and met with instructor to determine my project and wrote up a README.
 
 US1: Upon loading the website, the user should be greeted with a splash screen. The screen should have a welcome message and when the user clicks anywhere on the screen, the splash screen should disappear revealing the game.
-  -We need to have a div with a named class/id that we can manipulate with CSS/JS.
-  -We will use the DOM to add an event listener 'click' so when users click on the page, the splash screen goes away.
-  -We will use CSS to style the splash screen.
+  - We need to have a div with a named class/id that we can manipulate with CSS/JS.
+  - We will use the DOM to add an event listener 'click' so when users click on the page, the splash screen goes away.
+  - We will use CSS to style the splash screen.
 
 US2: After the splash screen has disappeared, we need to see the buttons for rock, paper, scissors. 
-  -buttons need to be labeled 
-  -what happens when we press a button? Buttons need to have functionality
-    --We need to determine the computer's choice.
-      ---since there are 3 choices we can say there is a 1/3 chance of each choice. We can use math.random() to have the computer randomly select a number and then write if statements to allocate each choice. So, we can say something like 'if the computer's random number is 1/3 or less, the computer's choice is rock. If the computer's random number is greater than 1/3 AND less than 2/3, the computer's choice is paper. If the computer's random number is greater than 2/3, the computer's choice is scissors.
+  - buttons need to be labeled 
+  - what happens when we press a button? Buttons need to have functionality
+    -- We need to determine the computer's choice.
+      --- since there are 3 choices we can say there is a 1/3 chance of each choice. We can use math.random() to have the computer randomly select a number and then write if statements to allocate each choice. So, we can say something like 'if the computer's random number is 1/3 or less, the computer's choice is rock. If the computer's random number is greater than 1/3 AND less than 2/3, the computer's choice is paper. If the computer's random number is greater than 2/3, the computer's choice is scissors.
     
 US2 CONT:    
     6/28/23
     Now that we have a function for determining computer's choice, we need to have a way to compare the player's choice when they click a button to the computer's choice
-      --we can use an if-else function again here to compare the function we created to determine the computer's move to our player's move
+      -- we can use an if-else function again here to compare the function we created to determine the computer's move to our player's move
       -- log into console to ensure functionality
 
 US3: As a player, we want to see the results visually instead of logging into the console.
-  -We need to see the Round, Score, as well as if the player or computer wins and what each player selected as their choice.
+  - We need to see the Round, Score, as well as if the player or computer wins and what each player selected as their choice.
   - we need to initialize the score as 0 near the top of the JS code
-  -we need to use the DOM to display the results of each button click into the HTML
+  - we need to use the DOM to display the results and current round of each button click into the HTML
+  - create a way to let user know each player's choice
