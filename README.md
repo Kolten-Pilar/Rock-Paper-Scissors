@@ -26,3 +26,8 @@ US3: As a player, we want to see the results visually instead of logging into th
   - we need to initialize the score as 0 near the top of the JS code
   - we need to use the DOM to display the results and current round of each button click into the HTML
   - create a way to let user know each player's choice
+
+US4: When a set number of wins has been reached by either player, we need a way to end the game.
+  - Have a way to show the user that they have won/lost
+  - Reset the game and update the score/round counter back to 0
+  - Allow the user to play again like it was from the beginning.

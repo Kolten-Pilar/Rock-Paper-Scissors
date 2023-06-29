@@ -48,16 +48,19 @@ const theGame = (playerMove) => {
   if (playerMove === 'rock') {
     if (computerMove === 'rock') {
       // each score case gets incremented
-      score.playerScore.ties++
-      score.computerScore.ties++
+      score.playerScore.ties++;
+      score.computerScore.ties++;
+      result = `This Round Is a Tie!`;
       console.log('tie');
     } else if (computerMove === 'paper') {
       score.playerScore.losses++
       score.computerScore.wins++
+      result = 'You lose This Round :(('
       console.log('lose');
     }  else if (computerMove === 'scissors') {
       score.playerScore.wins++
       score.computerScore.losses++
+      result = 'You Win This Round!';
       console.log('win');
     }   
 
@@ -65,14 +68,17 @@ const theGame = (playerMove) => {
     if (computerMove === 'rock') {
       score.playerScore.wins++
       score.computerScore.losses++
+      result = 'You Win This Round!';
       console.log('win');
     } else if (computerMove === 'paper') {
       score.playerScore.ties++
       score.computerScore.ties++
+      result = `This Round Is a Tie!`;
       console.log('tie');
     } else if (computerMove === 'scissors') {
       score.playerScore.losses++
       score.computerScore.wins++
+      result = 'You lose This Round :(('
       console.log('lose');
     }
 
@@ -80,16 +86,18 @@ const theGame = (playerMove) => {
     if (computerMove === 'rock') {
       score.playerScore.losses++
       score.computerScore.wins++
+      result = 'You lose This Round :(('
       console.log('lose');
     } else if (computerMove === 'paper') {
       score.playerScore.wins++
       score.computerScore.losses++
+      result = 'You Win This Round!';
       console.log('win');
     } else if (computerMove === 'scissors') {
       score.playerScore.ties++
       score.computerScore.ties++
+      result = `This Round Is a Tie!`;
       console.log('tie');
-      // i will change this to result tomorrow
     }
   }
 
@@ -102,7 +110,35 @@ const theGame = (playerMove) => {
 
 
   // alert box to show what each player chose
-  alert((`You chose ${playerMove}, computer chose ${computerMove}`));
+  alert((`You chose ${playerMove}, computer chose ${computerMove}. ${result}`));
+
+  if (score.playerScore.wins === 3) {
+    alert('You Win The Game!');
+    alert('New Game!!');
+    score.computerScore.wins = 0;
+    score.computerScore.losses = 0;
+    score.computerScore.ties = 0;
+    score.playerScore.wins = 0;
+    score.playerScore.losses = 0;
+    score.playerScore.ties = 0;
+    playerResult.innerText = (score.playerScore.wins);
+    computerResult.innerText = (score.computerScore.wins);
+    clickCount = 0;
+    return score;
+  } else if (score.computerScore.wins === 3) {
+    alert('You Lose The Game :((');
+    alert('New Game!!');
+    score.computerScore.wins = 0;
+    score.computerScore.losses = 0;
+    score.computerScore.ties = 0;
+    score.playerScore.wins = 0;
+    score.playerScore.losses = 0;
+    score.playerScore.ties = 0;
+    playerResult.innerText = (score.playerScore.wins);
+    computerResult.innerText = (score.computerScore.wins);
+    clickCount = 0;
+    return score;
+  };
   
   
   console.log(`Computer score is ${JSON.stringify(score.computerScore)}`);
@@ -119,6 +155,7 @@ button.addEventListener('click', () => {
   clickCount++;
   round.textContent = (`Round ${clickCount}`);
 });
+
 
 
 
