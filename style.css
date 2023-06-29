@@ -1,3 +1,9 @@
+body{
+  display: flex;
+  flex-direction: column;
+  background: url(https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80) center/cover;
+}
+
 .container{
   background-color: #585858;
   padding : 20px;
@@ -7,7 +13,7 @@
   flex-direction: column;
   text-align: center;
   width : 70%;
-  height: 70%;
+  height: 100%;
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -21,7 +27,8 @@
   color: #fff;
   font-family: Arial, Helvetica, sans-serif;
   transform : translate(-50%,-50%);    
-  background: url(https://images.unsplash.com/photo-1618214839021-3fbe98a597bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1931&q=80) no-repeat center center/cover;
+  background: url(https://img.freepik.com/free-photo/tree-businessmen-hand-showing-paper-rock-scissors-game-concept-by-3d-render-illustration_616485-101.jpg?w=740&t=st=1688062956~exp=1688063556~hmac=be4b7a34e9d3e3df7ffa39eb620f8fe6ac9af6121d0c7f7ccf28f7bb2b350df9) no-repeat center center/cover;
+  background-position: 35% 60%;
   transition: all ease-out 500ms;
   display: flex;
   flex-direction: column;
