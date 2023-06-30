@@ -10,7 +10,7 @@ splashScreen.addEventListener('click',()=>{
 });
 
 // initialize score
-const score = {playerScore : {
+let score = {playerScore : {
   wins: 0,
   losses: 0,
   ties: 0,
@@ -23,6 +23,27 @@ computerScore : {
   }
 };
 
+// initialize wins of each player
+let computerRoundCounter = document.getElementById('computer-rounds');
+let computerRoundCount = 0;
+
+let playerRoundCounter = document.getElementById('player-rounds');
+let playerRoundCount = 0;
+
+// get the data from local storage if there is any, otherwise use 0. We have to use ||(or operator) or else when the page loads it will come back as null on first time loading
+playerRoundCount = localStorage.getItem('playerRoundCount') || 0;
+computerRoundCount = localStorage.getItem('computerRoundCount') || 0;
+
+// we have to display the values that local storage reads upon loading
+playerRoundCounter.textContent = `Player Games Won: ${playerRoundCount}`;
+computerRoundCounter.textContent = `Computer Games Won: ${computerRoundCount}`;
+
+// initialize and display the score of computer and user
+let computerResult = document.getElementById('computer-result');
+  computerResult.innerText = (score.computerScore.wins);
+
+  let playerResult = document.getElementById('player-result');
+  playerResult.innerText = (score.playerScore.wins);
 
 
 // function for determining computer's choice
@@ -115,12 +136,25 @@ const theGame = (playerMove) => {
   if (score.playerScore.wins === 3) {
     alert('You Win The Game!');
     alert('New Game!!');
-    score.computerScore.wins = 0;
-    score.computerScore.losses = 0;
-    score.computerScore.ties = 0;
-    score.playerScore.wins = 0;
-    score.playerScore.losses = 0;
-    score.playerScore.ties = 0;
+    // keeps track of how many games has been won and stores in local storage
+    playerRoundCount++;
+    localStorage.setItem('playerRoundCount', playerRoundCount);
+    localStorage.setItem('computerRoundCount', computerRoundCount);
+    playerRoundCounter.textContent = (`Player Games Won: ${playerRoundCount}`);
+    // resets score data to 0
+    score = {playerScore : {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+      },
+    
+    computerScore : {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+      }
+    };
+    // below updates score of both players upon end of game on the page
     playerResult.innerText = (score.playerScore.wins);
     computerResult.innerText = (score.computerScore.wins);
     clickCount = 0;
@@ -128,21 +162,35 @@ const theGame = (playerMove) => {
   } else if (score.computerScore.wins === 3) {
     alert('You Lose The Game :((');
     alert('New Game!!');
-    score.computerScore.wins = 0;
-    score.computerScore.losses = 0;
-    score.computerScore.ties = 0;
-    score.playerScore.wins = 0;
-    score.playerScore.losses = 0;
-    score.playerScore.ties = 0;
+    // keeps track of how many games has been won and stores in local storage
+    computerRoundCount++;
+    localStorage.setItem('playerRoundCount', playerRoundCount);
+    localStorage.setItem('computerRoundCount', computerRoundCount);
+    computerRoundCounter.innerText = (`Computer Games Won: ${computerRoundCount}`);
+    // resets score data to 0
+    score = {playerScore : {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+      },
+    
+    computerScore : {
+      wins: 0,
+      losses: 0,
+      ties: 0,
+      }
+    };
+    // below updates score of both players upon end of game
     playerResult.innerText = (score.playerScore.wins);
     computerResult.innerText = (score.computerScore.wins);
     clickCount = 0;
     return score;
   };
   
-  
+
   console.log(`Computer score is ${JSON.stringify(score.computerScore)}`);
   console.log(`Player score is ${JSON.stringify(score.playerScore)}`);
+  
 }
 // ^^end of theGame
 
@@ -156,6 +204,43 @@ button.addEventListener('click', () => {
   round.textContent = (`Round ${clickCount}`);
 });
 
+// added reset button
+const resetButton = document.querySelector('.reset');
+resetButton.addEventListener('click', () => {
+  score = {playerScore : {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+    },
+  
+  computerScore : {
+    wins: 0,
+    losses: 0,
+    ties: 0,
+    }
+  };
+  clickCount = 1;
+  // updates on the page after clicking
+  round.textContent = (`Round ${clickCount}`);
+
+  let playerResult = document.getElementById('player-result');
+  playerResult.innerText = (score.playerScore.wins);
+
+  let computerResult = document.getElementById('computer-result');
+  computerResult.innerText = (score.computerScore.wins);
+
+  let computerRoundCounter = document.getElementById('computer-rounds');
+  let computerRoundCount = 0;
+  computerRoundCounter.innerText = (`Computer Games Won: ${computerRoundCount}`);
+
+  let playerRoundCounter = document.getElementById('player-rounds');
+  let playerRoundCount = 0;
+  playerRoundCounter.textContent = (`Player Games Won: ${playerRoundCount}`);
+
+  // resets local storage to 0
+  localStorage.setItem('playerRoundCount', 0);
+  localStorage.setItem('computerRoundCount', 0);
+})
 
 
 

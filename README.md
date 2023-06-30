@@ -29,5 +29,17 @@ US3: As a player, we want to see the results visually instead of logging into th
 
 US4: When a set number of wins has been reached by either player, we need a way to end the game.
   - Have a way to show the user that they have won/lost
-  - Reset the game and update the score/round counter back to 0
+  - Reset the game automatically and update the score/round counter back to 0
   - Allow the user to play again like it was from the beginning.
+
+Extra's: Try to use local storage to store the amount of times the game has been won by either player
+  - be sure to make the reset button reset the local storage too
+
+
+Overall, this was a fun and eye-opening first solo project. It feels good to have some JavaScript/DOM concepts start to really 'sink in' and, in turn, I am able to look up on Google the things I need to find much easier. I still had to resort to researching methods a lot but knowing what I'm trying to look for makes finding said content easier now.
+
+Areas to improve upon:
+- I need to try to incoporate arrays more. I stayed away from them in this project but I think I could have used an array on the score object.
+- Loops. I began to write a loop for the computer choice that would iterate over the rock paper or scissor choice and select it randomly but I scrapped the idea and wrote multiple if statements which leads me to my next point
+- condense the code. I looked up easier ways to write this game but I really wanted to try to write everything myself (and look up parts I was having issues with) with knowledge that I had up to this point. This will come with more practice and time.
+- design. I am no graphical designer, but I know I could do better in this apsect.

@@ -52,10 +52,6 @@ body{
   margin: auto;
 }
 
-body {
-  background-color: rgba(200,200,170);
-}
-
 #buttons {
   display: flex;
   flex-direction: column;
@@ -88,4 +84,20 @@ button:hover {
 .scissors {
   background: url(https://images.unsplash.com/photo-1503792501406-2c40da09e1e2?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1746&q=80)  no-repeat center/cover;
   background-position: 35% 42%;
+}
+
+.reset {
+  background: url(https://img.freepik.com/free-photo/arrow-making-circle-paper_23-2148456166.jpg?w=1380&t=st=1688154934~exp=1688155534~hmac=d62f2bdcce008937d7098ca535558efd789fc126690a12914918534abedc0bd7) no-repeat center/cover;
+}
+
+#showResults {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.userInterface {
+  font-size: 30px;
+  
 }

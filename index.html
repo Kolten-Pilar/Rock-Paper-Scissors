@@ -9,8 +9,16 @@
 <body>
 
   <div class="container">
+    <div class="userInterface">
     <h3 id="round-number">Round 1</h3>
     <p>Computer Score<p id="computer-result"></p>Player Score <p id="player-result"></p></p>
+    <div id="showResults">
+
+      <p id="computer-rounds">Computer Games Won:</p>
+
+      <p id="player-rounds">Player Games Won:</p>
+      </div>
+    </div>
   
   <!-- Splash Screen code starts here  -->
   <div class="splash">
@@ -26,6 +34,7 @@
       <button onclick="theGame('paper');" class="paper">Paper</button>
       <button onclick="theGame('scissors');" class="scissors">Scissors</button>
     </div>
+    <button class="reset">Reset</button>
 </div>
   
   <script src="script.js"></script>
